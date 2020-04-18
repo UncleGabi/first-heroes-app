@@ -31,7 +31,7 @@ let randomTeam = () => {
 $(".random-varak").css("opacity", "0");
 $("h3").css("opacity", "0");
 
-$("#invisible").click(() => {
+$("button").click(() => {
   $("#sajat-csapat, #ellenseg")
     .children()
     .each(function () {
@@ -39,9 +39,9 @@ $("#invisible").click(() => {
     });
 
   let scenario = [];
-  let numOfPlayers = 2 + parseInt($("#numOfPlayers").val());
+  let numOfPlayers = parseInt($("#numOfPlayers").val());
 
-  while (scenario.length < numOfPlayers) {
+  while (scenario.length < numOfPlayers + 2) {
     let team = randomTeam();
 
     if (scenario.indexOf(team) === -1) {
@@ -61,13 +61,15 @@ $("#invisible").click(() => {
     }
   }
 
-  $(".random-varak").css("opacity", "1");
-  $("h3").css("opacity", "1");
-  $("#numOfPlayers").blur();
+  if (numOfPlayers <= teams.length || numOfPlayers.length >= 1) {
+    $(".random-varak").css("opacity", "1");
+    $("h3").css("opacity", "1");
+    $("#numOfPlayers").blur();
+  }
 });
 
-$("body").keydown(function (e) {
+$("input").keydown(function (e) {
   if (e.keyCode == 13) {
-    $("#invisible").click();
+    $("button").click();
   }
 });
