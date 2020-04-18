@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Heroes III - Random vár</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Header's font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Heroes of Might & Magic III</h1>
+
+      <div id="preSet-panel">
+        <div id="invisible"></div>
+        <label for="numOfPlayers"
+          >Hány hitvány zsidó ellen akarunk megküzdeni??</label
+        >
+        <input type="number" name="NoOfPlayers" id="numOfPlayers" />
+      </div>
+
+      <label id="sajat-label" for="sajat-csapat"><h3>Csapataink</h3></label>
+      <div class="random-varak" id="sajat-csapat"></div>
+
+      <label id="ellenseg-label" for="ellenseg"><h3>Ellenfelek</h3></label>
+      <div class="random-varak" id="ellenseg"></div>
+    </div>
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
+    <script src="scripts.js"></script>
+  </body>
+</html>
