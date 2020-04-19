@@ -39,7 +39,25 @@ $("button").click(() => {
     });
 
   let scenario = [];
-  let numOfPlayers = parseInt($("#numOfPlayers").val());
+
+  let numOfPlayers = $("#numOfPlayers")
+    .val()
+    .split("")
+    .map((val) => {
+      let nums = [];
+      if (!isNaN(val)) {
+        nums.push(val);
+      }
+      return nums.join("");
+    })
+    .join("");
+
+  numOfPlayers =
+    parseInt(numOfPlayers) > teams.length || numOfPlayers === ""
+      ? teams.length - 2
+      : parseInt(numOfPlayers);
+
+  $("#numOfPlayers").val(parseInt(numOfPlayers));
 
   while (scenario.length < numOfPlayers + 2) {
     let team = randomTeam();
@@ -65,6 +83,14 @@ $("button").click(() => {
     $(".random-varak").css("opacity", "1");
     $("h3").css("opacity", "1");
     $("#numOfPlayers").blur();
+  }
+
+  if (numOfPlayers === 0) {
+    $("#ellenseg").css("opacity", "0");
+    $("#ellenseg-label").css("opacity", "0");
+  } else {
+    $("#ellenseg-label").css("opacity", "1");
+    $("#ellenseg").css("opacity", "1");
   }
 });
 
