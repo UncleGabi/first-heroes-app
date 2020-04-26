@@ -13,7 +13,7 @@ let cove = {
 };
 let dungeon = {
   src: "./várak/dungeon.png",
-  hover_src: "./hősök.Dungeon_heroes.jpg",
+  hover_src: "./hősök/Dungeon_heroes.jpg",
 };
 let fortress = {
   src: "./várak/fortress.jpg",
@@ -87,7 +87,7 @@ $("button").click(() => {
       ? teams.length - 2
       : parseInt(numOfPlayers);
 
-  $("#numOfPlayers").val(parseInt(numOfPlayers));
+  $("#numOfPlayers").val(numOfPlayers);
 
   while (scenario.length < numOfPlayers + 2) {
     let team = randomTeam();
@@ -100,13 +100,17 @@ $("button").click(() => {
 
     if (scenario.length <= 2) {
       $("#sajat-csapat").append(
-        `<img src=${team.src} onmouseover="this.src='${team.hover_src}'" 
-        onmouseout="this.src='${team.src}'" style="height:auto; width: 650px; margin-left:10px;">`
+        `<img src=${team.src} 
+        onmouseover="this.src='${team.hover_src}'" 
+        onmouseout="this.src='${team.src}'" 
+        style="height:auto; width: 650px; margin:10px;">`
       );
     } else {
       $("#ellenseg").append(
-        `<img src=${team.src} onmouseover="this.src='${team.hover_src}'" 
-        onmouseout="this.src='${team.src}'" style="height:auto; width: 650px; margin-left:10px;">`
+        `<img src=${team.src} 
+        onmouseover="this.src='${team.hover_src}'" 
+        onmouseout="this.src='${team.src}'" 
+        style="height:auto; width: 650px; margin:10px;">`
       );
     }
   }
