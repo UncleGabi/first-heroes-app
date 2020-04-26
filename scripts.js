@@ -1,14 +1,44 @@
 // várak
-let castle = "./várak/castle.jpg";
-let conflux = "./várak/conflux.jpg";
-let cove = "./várak/cove.jpg";
-let dungeon = "./várak/dungeon.jpg";
-let fortress = "./várak/fortress.jpg";
-let inferno = "./várak/inferno.jpg";
-let necropolis = "./várak/necropolis.jpg";
-let rampart = "./várak/rampart.jpg";
-let stronghold = "./várak/stronghold.jpg";
-let tower = "./várak/tower.jpg";
+let castle = {
+  src: "./várak/castle.jpg",
+  hover_src: "./hősök/Castle_heroes.jpg",
+};
+let conflux = {
+  src: "./várak/conflux.jpg",
+  hover_src: "./hősök/Conflux_heroes.jpg",
+};
+let cove = {
+  src: "./várak/cove.jpg",
+  hover_src: "./hősök/Cove_heroes.jpg",
+};
+let dungeon = {
+  src: "./várak/dungeon.png",
+  hover_src: "./hősök.Dungeon_heroes.jpg",
+};
+let fortress = {
+  src: "./várak/fortress.jpg",
+  hover_src: "./hősök/Fortress_heroes.jpg",
+};
+let inferno = {
+  src: "./várak/inferno.jpg",
+  hover_src: "./hősök/Inferno_heroes.jpg",
+};
+let necropolis = {
+  src: "./várak/necropolis.jpg",
+  hover_src: "./hősök/Necropolis_heroes.jpg",
+};
+let rampart = {
+  src: "./várak/rampart.jpg",
+  hover_src: "./hősök/Rampart_heroes.jpg",
+};
+let stronghold = {
+  src: "./várak/stronghold.jpg",
+  hover_src: "./hősök/Stronghold_heroes.jpg",
+};
+let tower = {
+  src: "./várak/tower.jpg",
+  hover_src: "./hősök/Tower_heroes.jpg",
+};
 
 let teams = [
   castle,
@@ -70,11 +100,13 @@ $("button").click(() => {
 
     if (scenario.length <= 2) {
       $("#sajat-csapat").append(
-        `<img src=${team} style="height:300px; width: auto; margin-left:10px;">`
+        `<img src=${team.src} onmouseover="this.src='${team.hover_src}'" 
+        onmouseout="this.src='${team.src}'" style="height:auto; width: 650px; margin-left:10px;">`
       );
     } else {
       $("#ellenseg").append(
-        `<img src=${team} style="height:300px; width: auto; margin:10px;">`
+        `<img src=${team.src} onmouseover="this.src='${team.hover_src}'" 
+        onmouseout="this.src='${team.src}'" style="height:auto; width: 650px; margin-left:10px;">`
       );
     }
   }
