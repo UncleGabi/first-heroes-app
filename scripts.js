@@ -103,14 +103,14 @@ $("button").click(() => {
         `<img src=${team.src} 
         onmouseover="this.src='${team.hover_src}'" 
         onmouseout="this.src='${team.src}'" 
-        style="height:auto; width: 650px; margin:10px;">`
+        style="height:auto; width: 47vw; margin:15px;">`
       );
     } else {
       $("#ellenseg").append(
         `<img src=${team.src} 
         onmouseover="this.src='${team.hover_src}'" 
         onmouseout="this.src='${team.src}'" 
-        style="height:auto; width: 650px; margin:10px;">`
+        style="height:auto; width: 46vw; margin:15px;">`
       );
     }
   }
