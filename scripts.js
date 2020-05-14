@@ -1,61 +1,81 @@
 // várak
-let castle = {
-  src: "./várak/castle.jpg",
-  hover_src: "./hősök/Castle_heroes.JPG",
-};
-let conflux = {
-  src: "./várak/conflux.jpg",
-  hover_src: "./hősök/Conflux_heroes.JPG",
-};
-let cove = {
-  src: "./várak/cove.jpg",
-  hover_src: "./hősök/Cove_heroes.JPG",
-};
-let dungeon = {
-  src: "./várak/dungeon.png",
-  hover_src: "./hősök/Dungeon_heroes.JPG",
-};
-let fortress = {
-  src: "./várak/fortress.jpg",
-  hover_src: "./hősök/Fortress_heroes.JPG",
-};
-let inferno = {
-  src: "./várak/inferno.jpg",
-  hover_src: "./hősök/Inferno_heroes.JPG",
-};
-let necropolis = {
-  src: "./várak/necropolis.jpg",
-  hover_src: "./hősök/Necropolis_heroes.JPG",
-};
-let rampart = {
-  src: "./várak/rampart.jpg",
-  hover_src: "./hősök/Rampart_heroes.JPG",
-};
-let stronghold = {
-  src: "./várak/stronghold.jpg",
-  hover_src: "./hősök/Stronghold_heroes.JPG",
-};
-let tower = {
-  src: "./várak/tower.jpg",
-  hover_src: "./hősök/Tower_heroes.JPG",
+let forces = {
+  0: {
+    // Castle
+    src: "./várak/castle.jpg",
+    hover_src: "./hősök/Castle_heroes.jpg",
+    index: -1,
+  },
+
+  1: {
+    // Conflux
+    src: "./várak/conflux.jpg",
+    hover_src: "./hősök/Conflux_heroes.jpg",
+    index: -1,
+  },
+
+  2: {
+    // Cove
+    src: "./várak/cove.jpg",
+    hover_src: "./hősök/Cove_heroes.jpg",
+    index: -1,
+  },
+
+  3: {
+    // Dungeon
+    src: "./várak/dungeon.png",
+    hover_src: "./hősök/Dungeon_heroes.jpg",
+    index: -1,
+  },
+
+  4: {
+    // Fortress
+    src: "./várak/fortress.jpg",
+    hover_src: "./hősök/Fortress_heroes.jpg",
+    index: -1,
+  },
+
+  5: {
+    // Inferno
+    src: "./várak/inferno.jpg",
+    hover_src: "./hősök/Inferno_heroes.jpg",
+    index: -1,
+  },
+
+  6: {
+    // Necropolis
+    src: "./várak/necropolis.jpg",
+    hover_src: "./hősök/Necropolis_heroes.jpg",
+    index: -1,
+  },
+
+  7: {
+    // Rampart
+    src: "./várak/rampart.jpg",
+    hover_src: "./hősök/Rampart_heroes.jpg",
+    index: -1,
+  },
+
+  8: {
+    // Stronghold
+    src: "./várak/stronghold.jpg",
+    hover_src: "./hősök/Stronghold_heroes.jpg",
+    index: -1,
+  },
+
+  9: {
+    // Stronghold
+    src: "./várak/tower.jpg",
+    hover_src: "./hősök/Tower_heroes.jpg",
+    index: -1,
+  },
 };
 
-let teams = [
-  castle,
-  conflux,
-  cove,
-  dungeon,
-  fortress,
-  inferno,
-  necropolis,
-  rampart,
-  stronghold,
-  tower,
-];
+let allForces = Object.keys(forces).length;
 
 let randomTeam = () => {
-  let randIndex = Math.floor(Math.random() * teams.length);
-  return teams[randIndex];
+  let randIndex = Math.floor(Math.random() * allForces);
+  return forces[randIndex];
 };
 
 $(".random-varak").css("opacity", "0");
@@ -68,7 +88,10 @@ $("button").click(() => {
       $(this).remove();
     });
 
-  let scenario = [];
+  // Reset
+  Object.keys(forces).map((key) => {
+    forces[key].index = -1;
+  });
 
   let numOfPlayers = $("#numOfPlayers")
     .val()
@@ -83,27 +106,30 @@ $("button").click(() => {
     .join("");
 
   numOfPlayers =
-    parseInt(numOfPlayers) > teams.length || numOfPlayers === ""
-      ? teams.length - 2
+    parseInt(numOfPlayers) > allForces || numOfPlayers === ""
+      ? allForces - 2
       : parseInt(numOfPlayers);
 
   $("#numOfPlayers").val(numOfPlayers);
 
-  while (scenario.length < numOfPlayers + 2) {
+  let count = 0;
+
+  while (count < numOfPlayers + 2) {
     let team = randomTeam();
 
-    if (scenario.indexOf(team) === -1) {
-      scenario.push(team);
+    if (team.index === -1) {
+      count++;
+      team.index = 0;
     } else {
       continue;
     }
 
-    if (scenario.length <= 2) {
+    if (count <= 2) {
       $("#sajat-csapat").append(
         `<img src=${team.src} 
         onmouseover="this.src='${team.hover_src}'" 
         onmouseout="this.src='${team.src}'" 
-        style="height:auto; width: 47vw; margin:15px;">`
+        style="height:auto; width: 46vw; margin:15px;">`
       );
     } else {
       $("#ellenseg").append(
@@ -115,7 +141,7 @@ $("button").click(() => {
     }
   }
 
-  if (numOfPlayers <= teams.length || numOfPlayers.length >= 1) {
+  if (numOfPlayers <= allForces || numOfPlayers >= 1) {
     $(".random-varak").css("opacity", "1");
     $("h3").css("opacity", "1");
     $("#numOfPlayers").blur();
