@@ -3,70 +3,70 @@ let forces = {
   0: {
     // Castle
     src: "./várak/castle.jpg",
-    hover_src: "./hősök/Castle_heroes.jpg",
+    hover_src: "./hősök/Castle_heroes.JPG",
     index: -1,
   },
 
   1: {
     // Conflux
     src: "./várak/conflux.jpg",
-    hover_src: "./hősök/Conflux_heroes.jpg",
+    hover_src: "./hősök/Conflux_heroes.JPG",
     index: -1,
   },
 
   2: {
     // Cove
     src: "./várak/cove.jpg",
-    hover_src: "./hősök/Cove_heroes.jpg",
+    hover_src: "./hősök/Cove_heroes.JPG",
     index: -1,
   },
 
   3: {
     // Dungeon
     src: "./várak/dungeon.png",
-    hover_src: "./hősök/Dungeon_heroes.jpg",
+    hover_src: "./hősök/Dungeon_heroes.JPG",
     index: -1,
   },
 
   4: {
     // Fortress
     src: "./várak/fortress.jpg",
-    hover_src: "./hősök/Fortress_heroes.jpg",
+    hover_src: "./hősök/Fortress_heroes.JPG",
     index: -1,
   },
 
   5: {
     // Inferno
     src: "./várak/inferno.jpg",
-    hover_src: "./hősök/Inferno_heroes.jpg",
+    hover_src: "./hősök/Inferno_heroes.JPG",
     index: -1,
   },
 
   6: {
     // Necropolis
     src: "./várak/necropolis.jpg",
-    hover_src: "./hősök/Necropolis_heroes.jpg",
+    hover_src: "./hősök/Necropolis_heroes.JPG",
     index: -1,
   },
 
   7: {
     // Rampart
     src: "./várak/rampart.jpg",
-    hover_src: "./hősök/Rampart_heroes.jpg",
+    hover_src: "./hősök/Rampart_heroes.JPG",
     index: -1,
   },
 
   8: {
     // Stronghold
     src: "./várak/stronghold.jpg",
-    hover_src: "./hősök/Stronghold_heroes.jpg",
+    hover_src: "./hősök/Stronghold_heroes.JPG",
     index: -1,
   },
 
   9: {
     // Stronghold
     src: "./várak/tower.jpg",
-    hover_src: "./hősök/Tower_heroes.jpg",
+    hover_src: "./hősök/Tower_heroes.JPG",
     index: -1,
   },
 };
