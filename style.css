@@ -104,3 +104,16 @@ button:active {
   outline: none;
   color: white;
 }
+
+img {
+  animation: fadeIn ease 2.5s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
