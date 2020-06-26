@@ -128,7 +128,7 @@ $("button").click(() => {
       $("#sajat-csapat").append(
         `<div class='cf'>
           <img class="bottom" src="${team.hover_src}" />
-          <img class="top" src="${team.src}" style="width: 50vw; height: 99vh;" />
+          <img class="top" src="${team.src}" style="width: 46vw; height: 99vh;" />
         </div>`
         // `<img src=${team.src}
         // onmouseover="this.src='${team.hover_src}'"
@@ -139,7 +139,7 @@ $("button").click(() => {
       $("#ellenseg").append(
         `<div class='cf'>
           <img class="bottom" src="${team.hover_src}" />
-          <img class="top" src="${team.src}" style="width: 50vw; height: 99vh;" />
+          <img class="top" src="${team.src}" style="width: 46vw; height: 99vh;" />
         </div>`
         // `<img src=${team.src}
         // onmouseover="this.src='${team.hover_src}'"
