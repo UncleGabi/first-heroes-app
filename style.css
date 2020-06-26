@@ -106,7 +106,7 @@ button:active {
 }
 
 img {
-  animation: fadeIn ease 2.5s;
+  animation: fadeIn ease 0.8s;
 }
 
 @keyframes fadeIn {
@@ -116,4 +116,26 @@ img {
   100% {
     opacity: 1;
   }
+}
+
+.cf {
+  position: relative;
+  height: 60vh;
+  width: 46vw;
+  left: 0;
+}
+
+.cf img {
+  max-width: 46vw;
+  max-height: 58vh;
+  position: absolute;
+  left: 0;
+  -webkit-transition: opacity 0.5s ease-in-out;
+  -moz-transition: opacity 0.5s ease-in-out;
+  -o-transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.cf img.top:hover {
+  opacity: 0;
 }

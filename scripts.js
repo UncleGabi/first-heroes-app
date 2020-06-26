@@ -126,17 +126,25 @@ $("button").click(() => {
 
     if (count <= 2) {
       $("#sajat-csapat").append(
-        `<img src=${team.src} 
-        onmouseover="this.src='${team.hover_src}'" 
-        onmouseout="this.src='${team.src}'" 
-        style="height:auto; width: 46vw; margin:15px;">`
+        `<div class='cf'>
+          <img class="bottom" src="${team.hover_src}" />
+          <img class="top" src="${team.src}" style="width: 50vw; height: 99vh;" />
+        </div>`
+        // `<img src=${team.src}
+        // onmouseover="this.src='${team.hover_src}'"
+        // onmouseout="this.src='${team.src}'"
+        // style="height:auto; width: 46vw; margin:15px;">`
       );
     } else {
       $("#ellenseg").append(
-        `<img src=${team.src} 
-        onmouseover="this.src='${team.hover_src}'" 
-        onmouseout="this.src='${team.src}'" 
-        style="height:auto; width: 46vw; margin:15px;">`
+        `<div class='cf'>
+          <img class="bottom" src="${team.hover_src}" />
+          <img class="top" src="${team.src}" style="width: 50vw; height: 99vh;" />
+        </div>`
+        // `<img src=${team.src}
+        // onmouseover="this.src='${team.hover_src}'"
+        // onmouseout="this.src='${team.src}'"
+        // style="height:auto; width: 46vw; margin:15px;">`
       );
     }
   }
