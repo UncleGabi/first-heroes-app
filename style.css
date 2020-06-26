@@ -36,7 +36,7 @@ h3 {
   padding: 15px;
   margin-bottom: 30px;
   height: fit-content;
-  width: fit-content;
+  width: 95vw;
   background-color: rgba(0, 0, 0, 0.3);
   margin: auto;
   display: flex;
@@ -106,7 +106,7 @@ button:active {
 }
 
 img {
-  animation: fadeIn ease 0.8s;
+  animation: fadeIn ease 1s;
 }
 
 @keyframes fadeIn {

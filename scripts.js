@@ -144,7 +144,7 @@ $("button").click(() => {
         // `<img src=${team.src}
         // onmouseover="this.src='${team.hover_src}'"
         // onmouseout="this.src='${team.src}'"
-        // style="height:auto; width: 46vw; margin:15px;">`
+        // style="height:46vh; width: 46vw; margin:15px;">`
       );
     }
   }
